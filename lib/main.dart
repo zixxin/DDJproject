@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             color: backgroundColor,
-            title: 'DDJ Project',
+            title: '두더지프로젝트',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               useMaterial3: true,

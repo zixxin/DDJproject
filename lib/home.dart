@@ -17,90 +17,113 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'DDJ project',
-                  style: TextStyle(
-                      fontFamily: 'Judson',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 40,
-                      color: red),
-                ),
-                Row(
-                  children: [
-                    TextButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        overlayColor: MaterialStateColor.resolveWith(
-                            (states) => Colors.transparent),
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+              child: Column(
+                children: [
+                  header(),
+                  const Padding(padding: EdgeInsets.only(bottom: 80)),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 220,
+                        child: Image.asset('images/logo.png'),
                       ),
-                      child: const Text(
-                        'About us',
+                      const Padding(padding: EdgeInsets.only(bottom: 10)),
+                      const Text(
+                        'DDJ project',
                         style: TextStyle(
-                            color: black,
                             fontFamily: 'Judson',
                             fontWeight: FontWeight.w700,
-                            fontSize: 25),
+                            fontSize: 40,
+                            color: red),
                       ),
-                    ),
-                    const Padding(padding: EdgeInsets.only(right: 20)),
-                    TextButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        overlayColor: MaterialStateColor.resolveWith(
-                            (states) => Colors.transparent),
-                      ),
-                      child: const Text(
-                        'Our Story',
-                        style: TextStyle(
-                            color: black,
-                            fontFamily: 'Judson',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 25),
-                      ),
-                    ),
-                    const Padding(padding: EdgeInsets.only(right: 20)),
-                    TextButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        overlayColor: MaterialStateColor.resolveWith(
-                            (states) => Colors.transparent),
-                      ),
-                      child: const Text(
-                        'Career',
-                        style: TextStyle(
-                            color: black,
-                            fontFamily: 'Judson',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 25),
-                      ),
-                    ),
-                    const Padding(padding: EdgeInsets.only(right: 20)),
-                    TextButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        overlayColor: MaterialStateColor.resolveWith(
-                            (states) => Colors.transparent),
-                      ),
-                      child: const Text(
-                        'Contact',
-                        style: TextStyle(
-                            color: black,
-                            fontFamily: 'Judson',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 25),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+                    ],
+                  ),
+                ],
+              )),
         ],
       ),
     );
   }
+}
+
+Widget header() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      const Text(
+        'DDJ project',
+        style: TextStyle(
+            fontFamily: 'Judson',
+            fontWeight: FontWeight.w700,
+            fontSize: 40,
+            color: red),
+      ),
+      Row(
+        children: [
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              overlayColor: MaterialStateColor.resolveWith(
+                  (states) => Colors.transparent),
+            ),
+            child: const Text(
+              'About us',
+              style: TextStyle(
+                  color: black,
+                  fontFamily: 'Judson',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 25),
+            ),
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              overlayColor: MaterialStateColor.resolveWith(
+                  (states) => Colors.transparent),
+            ),
+            child: const Text(
+              'Our Story',
+              style: TextStyle(
+                  color: black,
+                  fontFamily: 'Judson',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 25),
+            ),
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              overlayColor: MaterialStateColor.resolveWith(
+                  (states) => Colors.transparent),
+            ),
+            child: const Text(
+              'Career',
+              style: TextStyle(
+                  color: black,
+                  fontFamily: 'Judson',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 25),
+            ),
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              overlayColor: MaterialStateColor.resolveWith(
+                  (states) => Colors.transparent),
+            ),
+            child: const Text(
+              'Contact',
+              style: TextStyle(
+                  color: black,
+                  fontFamily: 'Judson',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 25),
+            ),
+          ),
+        ],
+      ),
+    ],
+  );
 }
