@@ -32,6 +32,28 @@ final imageList = {
   "images/올리브전경.JPG",
 };
 
+final imageTextEng = {
+  "K-Food Experience at its Finest",
+  "K-Food Experience at its Finest ",
+  "K-Food Experience at its Finest  ",
+  "K-Food Experience at its Finest   ",
+  "K-Food Experience at its Finest    ",
+  "K-Food Experience at its Finest     ",
+  "K-Food Experience at its Finest      ",
+  "K-Food Experience at its Finest       ",
+};
+
+final imageTextKor = {
+  "최고의 한식 경험을 두더지와 함께",
+  "최고의 한식 경험을 두더지와 함께 ",
+  "최고의 한식 경험을 두더지와 함께  ",
+  "최고의 한식 경험을 두더지와 함께    ",
+  "최고의 한식 경험을 두더지와 함께     ",
+  "최고의 한식 경험을 두더지와 함께      ",
+  "최고의 한식 경험을 두더지와 함께       ",
+  "최고의 한식 경험을 두더지와 함께        ",
+};
+
 int activeIndex = 0;
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -96,7 +118,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Padding(padding: EdgeInsets.only(bottom: 80)),
                   logo(),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 150),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 150, horizontal: 150),
                     child: logoList(),
                   ),
                 ],
@@ -123,23 +146,64 @@ class _MyHomePageState extends State<MyHomePage> {
         itemCount: imageList.length,
         itemBuilder: (context, index, realIndex) {
           final path = imageList.elementAt(index);
-          return imageSlider(path, index);
+          final eng = imageTextEng.elementAt(index);
+          final kor = imageTextKor.elementAt(index);
+          return imageSlider(path, eng, kor, index);
         },
       ),
       Align(alignment: Alignment.bottomCenter, child: indicator())
     ]);
   }
 
-  Widget imageSlider(path, index) => Container(
-        width: double.infinity,
-        height: 240,
-        color: Colors.transparent,
-        child: Image.asset(
-          path,
-          fit: BoxFit.cover,
-          width: MediaQuery.of(context).size.width,
-        ),
-      );
+  Widget imageSlider(path, eng, kor, index) {
+    return Container(
+      width: double.infinity,
+      height: 240,
+      color: Colors.transparent,
+      child: Stack(
+        children: [
+          Image.asset(
+            path,
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width,
+          ),
+          Container(
+            color: black.withOpacity(0.5),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 2,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    eng,
+                    style: const TextStyle(
+                        color: white,
+                        fontFamily: 'Judson',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 30),
+                  ),
+                  Text(
+                    kor,
+                    style: const TextStyle(
+                        color: white,
+                        fontFamily: 'NanumMyeongjo',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 27),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget indicator() => Container(
       margin: const EdgeInsets.only(bottom: 30.0),
@@ -178,7 +242,7 @@ Widget logo() {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       SizedBox(
-        width: 220,
+        width: 200,
         child: Image.asset('images/logo.png'),
       ),
       const Padding(padding: EdgeInsets.only(bottom: 10)),
