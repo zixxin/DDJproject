@@ -36,6 +36,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_screenutil: ^5.9.0
+  carousel_slider: ^4.2.1
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +64,23 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/logo.png
+    - images/고도리.png
+    - images/고도리내부.JPG
+    - images/두더지.png
+    - images/두더지강정.png
+    - images/약과방.png
+    - images/약과방내부.JPG
+    - images/여도가주.png
+    - images/올리브.png
+    - images/올리브내부.JPG
+    - images/올리브빵.JPG
+    - images/올리브전경.JPG
+    - images/향화정.png
+    - images/황남샌드.png
+    - images/황남샌드전경.JPG
+    - images/황남우엉김밥.png
+    - images/황남우엉김밥내부.JPG
+    - images/황남우엉김밥카운터.JPG
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
