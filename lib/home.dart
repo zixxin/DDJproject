@@ -115,8 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   const EdgeInsets.symmetric(horizontal: 130, vertical: 10),
               child: Column(
                 children: [
-                  const Padding(padding: EdgeInsets.only(bottom: 80)),
-                  logo(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 130),
+                    child: logo(),
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         vertical: 150, horizontal: 150),
@@ -219,13 +221,49 @@ class _MyHomePageState extends State<MyHomePage> {
       ));
 }
 
+final GlobalKey logoKey = GlobalKey();
+final GlobalKey storyKey = GlobalKey();
+final GlobalKey careerKey = GlobalKey();
+final GlobalKey contactKey = GlobalKey();
+
 Widget headerTitle(String title) {
-  return TextButton(
-    onPressed: () {},
+  return FilledButton(
     style: ButtonStyle(
+      shadowColor:
+          MaterialStateColor.resolveWith((states) => Colors.transparent),
+      backgroundColor:
+          MaterialStateColor.resolveWith((states) => Colors.transparent),
       overlayColor:
           MaterialStateColor.resolveWith((states) => Colors.transparent),
     ),
+    onPressed: () {
+      if (title == 'About us') {
+        Scrollable.ensureVisible(logoKey.currentContext!,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+            alignment: 0);
+      } else if (title == 'Our Story') {
+        Scrollable.ensureVisible(storyKey.currentContext!,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+            alignment: 0);
+      } else if (title == 'Career') {
+        Scrollable.ensureVisible(logoKey.currentContext!,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+            alignment: 0);
+      } else if (title == 'Contact') {
+        Scrollable.ensureVisible(storyKey.currentContext!,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+            alignment: 0);
+      } else if (title == 'Meta·V') {
+        Scrollable.ensureVisible(logoKey.currentContext!,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+            alignment: 0);
+      }
+    },
     child: Text(
       title,
       style: const TextStyle(
@@ -239,6 +277,7 @@ Widget headerTitle(String title) {
 
 Widget logo() {
   return Column(
+    key: logoKey,
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       SizedBox(
@@ -260,6 +299,7 @@ Widget logo() {
 
 Widget logoList() {
   return GridView.builder(
+    key: storyKey,
     scrollDirection: Axis.vertical,
     shrinkWrap: true,
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
