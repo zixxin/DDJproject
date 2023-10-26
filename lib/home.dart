@@ -112,17 +112,25 @@ class _MyHomePageState extends State<MyHomePage> {
           showImage(),
           Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 130, vertical: 10),
+                  const EdgeInsets.symmetric(horizontal: 220, vertical: 10),
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 130),
+                    padding: const EdgeInsets.only(top: 160),
                     child: logo(),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 150, horizontal: 150),
+                        vertical: 180, horizontal: 100),
                     child: logoList(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 180),
+                    child: mission(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 180),
+                    child: vision(),
                   ),
                 ],
               )),
@@ -313,5 +321,106 @@ Widget logoList() {
       width: 100,
       child: Image.asset(logoImage.elementAt(index)),
     ),
+  );
+}
+
+Widget mission() {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text(
+        'Mission',
+        style: TextStyle(
+            fontFamily: 'Judson',
+            fontWeight: FontWeight.w700,
+            fontSize: 40,
+            color: black),
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 30),
+        child: Text(
+          'To aims for food, space, and culture.',
+          style: TextStyle(
+              fontFamily: 'Judson',
+              fontWeight: FontWeight.w400,
+              fontSize: 25,
+              color: black),
+        ),
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 10, bottom: 80),
+        child: Text(
+          '음식, 공간, 문화를 지향합니다.',
+          style: TextStyle(
+              fontFamily: 'NanumMyeongjo',
+              fontWeight: FontWeight.w400,
+              fontSize: 20,
+              color: black),
+        ),
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          missionCircle('Food', '음식'),
+          missionCircle('Space', '공간'),
+          missionCircle('Culture', '문화'),
+        ],
+      ),
+    ],
+  );
+}
+
+Widget missionCircle(String eng, String kor) {
+  return ClipRRect(
+    borderRadius: BorderRadius.circular(200),
+    child: Container(
+      alignment: Alignment.center,
+      width: 340,
+      height: 235,
+      decoration: const BoxDecoration(
+        color: orange,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            eng,
+            style: const TextStyle(
+                fontFamily: 'Judson',
+                fontWeight: FontWeight.w400,
+                fontSize: 42,
+                color: black),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Text(
+              kor,
+              style: const TextStyle(
+                  fontFamily: 'NanumMyeongjo',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 27,
+                  color: black),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget vision() {
+  return const Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Text(
+        'Vision',
+        style: TextStyle(
+            fontFamily: 'Judson',
+            fontWeight: FontWeight.w700,
+            fontSize: 40,
+            color: black),
+      ),
+    ],
   );
 }
