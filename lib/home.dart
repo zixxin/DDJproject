@@ -490,27 +490,14 @@ Widget career() {
       const Padding(
         padding: EdgeInsets.only(top: 30),
       ),
-      Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            width: 900,
-            height: 100,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: const Color(0xffF0EDE7),
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          const Text(
-            '인재상 및 인재 채용 철학',
-            style: TextStyle(
-                fontFamily: 'NanumMyeongjo',
-                fontWeight: FontWeight.w400,
-                fontSize: 22,
-                color: black),
-          ),
-        ],
+      const Text(
+        '인재상 및 인재 채용 철학 인재상 및 인재 채용 철학 인재상 및 인재 채용 철학\n인재상 및 인재 채용 철학 인재상 및 인재 채용 철학 인재상 및 인재 채용 철학',
+        style: TextStyle(
+            height: 1.7,
+            fontFamily: 'NanumMyeongjo',
+            fontWeight: FontWeight.w400,
+            fontSize: 21,
+            color: black),
       ),
       const Padding(
         padding: EdgeInsets.only(top: 50),
@@ -527,30 +514,17 @@ Widget career() {
       const Padding(
         padding: EdgeInsets.only(top: 50),
       ),
-      Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            width: 900,
-            height: 100,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: const Color(0xffF0EDE7),
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          const Text(
-            '인재 양성 전략',
-            style: TextStyle(
-                fontFamily: 'NanumMyeongjo',
-                fontWeight: FontWeight.w400,
-                fontSize: 22,
-                color: black),
-          ),
-        ],
+      const Text(
+        '인재 양성 전략 인재 양성 전략 인재 양성 전략 인재 양성 전략 인재 양성 전략\n인재 양성 전략 인재 양성 전략 인재 양성 전략 인재 양성 전략 인재 양성 전략',
+        style: TextStyle(
+            height: 1.7,
+            fontFamily: 'NanumMyeongjo',
+            fontWeight: FontWeight.w400,
+            fontSize: 21,
+            color: black),
       ),
       const Padding(
-        padding: EdgeInsets.only(top: 30),
+        padding: EdgeInsets.only(top: 40),
       ),
       Stack(
         alignment: Alignment.center,
