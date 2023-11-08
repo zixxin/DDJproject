@@ -76,15 +76,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     const Padding(padding: EdgeInsets.only(left: 100)),
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      width: 70,
+                      width: 50,
                       child: Image.asset('images/두더지.png'),
                     ),
+                    const Padding(padding: EdgeInsets.only(left: 20)),
                     const Text(
                       'DDJ project',
                       style: TextStyle(
                           fontFamily: 'Judson',
                           fontWeight: FontWeight.w700,
-                          fontSize: 35,
+                          fontSize: 30,
                           color: red),
                     ),
                   ],
@@ -97,7 +98,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       headerTitle('Our Story'),
                       headerTitle('Career'),
                       headerTitle('Contact'),
-                      headerTitle('Meta·V'),
                       const Padding(padding: EdgeInsets.only(right: 100)),
                     ],
                   ),
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
           showImage(),
           Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 220, vertical: 10),
+                  const EdgeInsets.symmetric(horizontal: 350, vertical: 10),
               child: Column(
                 children: [
                   Padding(
@@ -121,16 +121,32 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 180, horizontal: 100),
+                        vertical: 210, horizontal: 60),
                     child: logoList(),
                   ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(top: 160),
+                  //   child: logo(),
+                  // ),
+                  // const VerticalDivider(
+                  //   thickness: 2.83,
+                  //   color: black,
+                  // ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 180),
+                    padding: const EdgeInsets.only(top: 10, bottom: 210),
                     child: mission(),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 180),
+                    padding: const EdgeInsets.only(bottom: 210),
                     child: vision(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 210),
+                    child: career(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 210),
+                    child: contact(),
                   ),
                 ],
               )),
@@ -256,17 +272,12 @@ Widget headerTitle(String title) {
             curve: Curves.easeInOut,
             alignment: 0);
       } else if (title == 'Career') {
-        Scrollable.ensureVisible(logoKey.currentContext!,
+        Scrollable.ensureVisible(careerKey.currentContext!,
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut,
             alignment: 0);
       } else if (title == 'Contact') {
-        Scrollable.ensureVisible(storyKey.currentContext!,
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.easeInOut,
-            alignment: 0);
-      } else if (title == 'Meta·V') {
-        Scrollable.ensureVisible(logoKey.currentContext!,
+        Scrollable.ensureVisible(contactKey.currentContext!,
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut,
             alignment: 0);
@@ -278,7 +289,7 @@ Widget headerTitle(String title) {
           color: black,
           fontFamily: 'Judson',
           fontWeight: FontWeight.w700,
-          fontSize: 25),
+          fontSize: 23),
     ),
   );
 }
@@ -289,7 +300,7 @@ Widget logo() {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       SizedBox(
-        width: 200,
+        width: 170,
         child: Image.asset('images/logo.png'),
       ),
       const Padding(padding: EdgeInsets.only(bottom: 10)),
@@ -298,7 +309,7 @@ Widget logo() {
         style: TextStyle(
             fontFamily: 'Judson',
             fontWeight: FontWeight.w700,
-            fontSize: 40,
+            fontSize: 33,
             color: red),
       ),
     ],
@@ -329,11 +340,11 @@ Widget mission() {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       const Text(
-        'Mission',
+        'MISSION',
         style: TextStyle(
             fontFamily: 'Judson',
             fontWeight: FontWeight.w700,
-            fontSize: 40,
+            fontSize: 30,
             color: black),
       ),
       const Padding(
@@ -343,18 +354,18 @@ Widget mission() {
           style: TextStyle(
               fontFamily: 'Judson',
               fontWeight: FontWeight.w400,
-              fontSize: 25,
+              fontSize: 23,
               color: black),
         ),
       ),
       const Padding(
-        padding: EdgeInsets.only(top: 10, bottom: 80),
+        padding: EdgeInsets.only(top: 10, bottom: 60),
         child: Text(
           '음식, 공간, 문화를 지향합니다.',
           style: TextStyle(
               fontFamily: 'NanumMyeongjo',
               fontWeight: FontWeight.w400,
-              fontSize: 20,
+              fontSize: 21,
               color: black),
         ),
       ),
@@ -371,12 +382,12 @@ Widget mission() {
 }
 
 Widget missionCircle(String eng, String kor) {
-  return ClipRRect(
-    borderRadius: BorderRadius.circular(200),
+  return ClipOval(
+    clipper: MyClipper(),
     child: Container(
+      width: 250,
+      height: 195,
       alignment: Alignment.center,
-      width: 340,
-      height: 235,
       decoration: const BoxDecoration(
         color: orange,
       ),
@@ -389,7 +400,7 @@ Widget missionCircle(String eng, String kor) {
             style: const TextStyle(
                 fontFamily: 'Judson',
                 fontWeight: FontWeight.w400,
-                fontSize: 42,
+                fontSize: 32,
                 color: black),
           ),
           Padding(
@@ -398,8 +409,8 @@ Widget missionCircle(String eng, String kor) {
               kor,
               style: const TextStyle(
                   fontFamily: 'NanumMyeongjo',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 27,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 25,
                   color: black),
             ),
           ),
@@ -410,17 +421,272 @@ Widget missionCircle(String eng, String kor) {
 }
 
 Widget vision() {
-  return const Column(
+  return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Text(
-        'Vision',
+      const Text(
+        'VISION',
         style: TextStyle(
             fontFamily: 'Judson',
             fontWeight: FontWeight.w700,
-            fontSize: 40,
+            fontSize: 30,
+            color: black),
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          visionView('한식의 세계화'),
+          visionView('지역 경제 활성화'),
+          visionView('일자리 창출')
+        ],
+      ),
+    ],
+  );
+}
+
+Widget visionView(String title) {
+  return Column(
+    children: [
+      Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: Container(
+          width: 280,
+          height: 195,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: const Color(0xffF0EDE7),
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(top: 25),
+        child: Text(
+          title,
+          style: const TextStyle(
+              fontFamily: 'NanumMyeongjo',
+              fontWeight: FontWeight.w400,
+              fontSize: 22,
+              color: black),
+        ),
+      ),
+    ],
+  );
+}
+
+Widget career() {
+  return Column(
+    key: careerKey,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text(
+        'CAREER',
+        style: TextStyle(
+            fontFamily: 'Judson',
+            fontWeight: FontWeight.w700,
+            fontSize: 30,
+            color: black),
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 30),
+      ),
+      Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: 900,
+            height: 100,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xffF0EDE7),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          const Text(
+            '인재상 및 인재 채용 철학',
+            style: TextStyle(
+                fontFamily: 'NanumMyeongjo',
+                fontWeight: FontWeight.w400,
+                fontSize: 22,
+                color: black),
+          ),
+        ],
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 50),
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          careerCircle('열정'),
+          careerCircle('도전'),
+          careerCircle('실행력'),
+          careerCircle('생존력'),
+        ],
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 50),
+      ),
+      Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: 900,
+            height: 100,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xffF0EDE7),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          const Text(
+            '인재 양성 전략',
+            style: TextStyle(
+                fontFamily: 'NanumMyeongjo',
+                fontWeight: FontWeight.w400,
+                fontSize: 22,
+                color: black),
+          ),
+        ],
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 30),
+      ),
+      Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: 900,
+            height: 100,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xffF0EDE7),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          const Text(
+            '두더지 프로젝트 인턴십 프로그램 소개',
+            style: TextStyle(
+                fontFamily: 'NanumMyeongjo',
+                fontWeight: FontWeight.w400,
+                fontSize: 22,
+                color: black),
+          ),
+        ],
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 30),
+      ),
+      Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: 900,
+            height: 100,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xffF0EDE7),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          const Text(
+            '한 눈에 모아보는 복지 혜택',
+            style: TextStyle(
+                fontFamily: 'NanumMyeongjo',
+                fontWeight: FontWeight.w400,
+                fontSize: 22,
+                color: black),
+          ),
+        ],
+      ),
+      const Padding(
+        padding: EdgeInsets.only(top: 30),
+      ),
+      Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: 900,
+            height: 100,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xffF0EDE7),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          const Text(
+            '두더지 프로젝트와 함께하고 싶다면?',
+            style: TextStyle(
+                fontFamily: 'NanumMyeongjo',
+                fontWeight: FontWeight.w400,
+                fontSize: 22,
+                color: black),
+          ),
+        ],
+      ),
+    ],
+  );
+}
+
+Widget careerCircle(String kor) {
+  return ClipOval(
+    clipper: MyClipperCareer(),
+    child: Container(
+      width: 200,
+      height: 165,
+      alignment: Alignment.center,
+      decoration: const BoxDecoration(
+        color: orange,
+      ),
+      child: Text(
+        kor,
+        style: const TextStyle(
+            fontFamily: 'NanumMyeongjo',
+            fontWeight: FontWeight.w400,
+            fontSize: 27,
+            color: black),
+      ),
+    ),
+  );
+}
+
+Widget contact() {
+  return Column(
+    key: contactKey,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: const [
+      Text(
+        'CONTACT',
+        style: TextStyle(
+            fontFamily: 'Judson',
+            fontWeight: FontWeight.w700,
+            fontSize: 30,
             color: black),
       ),
     ],
   );
+}
+
+class MyClipper extends CustomClipper<Rect> {
+  @override
+  Rect getClip(Size size) {
+    return const Rect.fromLTWH(0, 0, 250, 195);
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Rect> oldClipper) {
+    return true;
+  }
+}
+
+class MyClipperCareer extends CustomClipper<Rect> {
+  @override
+  Rect getClip(Size size) {
+    return const Rect.fromLTWH(0, 0, 200, 165);
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Rect> oldClipper) {
+    return true;
+  }
 }
