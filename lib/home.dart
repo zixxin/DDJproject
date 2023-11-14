@@ -233,14 +233,13 @@ Widget header(BuildContext context) {
           width: 50,
           child: Image.asset('images/logo.png'),
         ),
-        const Padding(padding: EdgeInsets.only(left: 8)),
+        const Padding(padding: EdgeInsets.only(left: 10)),
         FilledButton(
-          style: ButtonStyle(
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
             shadowColor:
                 MaterialStateColor.resolveWith((states) => Colors.transparent),
             backgroundColor:
-                MaterialStateColor.resolveWith((states) => Colors.transparent),
-            overlayColor:
                 MaterialStateColor.resolveWith((states) => Colors.transparent),
           ),
           onPressed: () {
