@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'utils/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'background.dart';
+import 'ci.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -77,71 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AppBar(
-              scrolledUnderElevation: 0,
-              backgroundColor: backgroundColor,
-              automaticallyImplyLeading: false,
-              elevation: 0.0,
-              leading: Row(
-                children: [
-                  const Padding(padding: EdgeInsets.only(left: 100)),
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    width: 50,
-                    child: Image.asset('images/logo.png'),
-                  ),
-                  const Padding(padding: EdgeInsets.only(left: 8)),
-                  const Text(
-                    '두더지 프로젝트',
-                    style: TextStyle(
-                        fontFamily: 'NanumMyeongjo',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24,
-                        color: red),
-                  ),
-                ],
-              ),
-              leadingWidth: 700,
-              actions: [
-                Row(
-                  children: [
-                    headerTitle('About us'),
-                    headerTitle('Business'),
-                    headerTitle('Career'),
-                    headerTitle('Contact'),
-                    const Padding(padding: EdgeInsets.only(right: 100)),
-                  ],
-                ),
-              ],
-              // bottom: PreferredSize(
-              //     preferredSize: const Size.fromHeight(100.0),
-              //     child: Column(children: [
-              //       Divider(
-              //           thickness: 1,
-              //           color: grey,
-              //           indent: MediaQuery.of(context).size.width * 0.1,
-              //           endIndent: MediaQuery.of(context).size.width * 0.1),
-              //       const Padding(
-              //         padding: EdgeInsets.only(top: 15),
-              //       ),
-              //       bottomTitle('Background'),
-              //       const Padding(
-              //         padding: EdgeInsets.only(top: 5),
-              //       ),
-              //       bottomTitle('Vision&Mission'),
-              //       const Padding(
-              //         padding: EdgeInsets.only(top: 5),
-              //       ),
-              //       bottomTitle('History'),
-              //       const Padding(
-              //         padding: EdgeInsets.only(top: 5),
-              //       ),
-              //       bottomTitle('CI'),
-              //       const Padding(
-              //         padding: EdgeInsets.only(bottom: 15),
-              //       ),
-              //     ])),
-            ),
+            header(context),
           ],
         ),
       ),
@@ -281,7 +219,64 @@ class _MyHomePageState extends State<MyHomePage> {
       ));
 }
 
-Widget headerTitle(String title) {
+Widget header(BuildContext context) {
+  return AppBar(
+    scrolledUnderElevation: 0,
+    backgroundColor: backgroundColor,
+    automaticallyImplyLeading: false,
+    elevation: 0.0,
+    leading: Row(
+      children: [
+        const Padding(padding: EdgeInsets.only(left: 100)),
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          width: 50,
+          child: Image.asset('images/logo.png'),
+        ),
+        const Padding(padding: EdgeInsets.only(left: 8)),
+        FilledButton(
+          style: ButtonStyle(
+            shadowColor:
+                MaterialStateColor.resolveWith((states) => Colors.transparent),
+            backgroundColor:
+                MaterialStateColor.resolveWith((states) => Colors.transparent),
+            overlayColor:
+                MaterialStateColor.resolveWith((states) => Colors.transparent),
+          ),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const MyHomePage(),
+              ),
+            );
+          },
+          child: const Text(
+            '두더지 프로젝트',
+            style: TextStyle(
+                fontFamily: 'NanumMyeongjo',
+                fontWeight: FontWeight.w700,
+                fontSize: 24,
+                color: red),
+          ),
+        ),
+      ],
+    ),
+    leadingWidth: 700,
+    actions: [
+      Row(
+        children: [
+          headerTitle('About us', context),
+          headerTitle('Business', context),
+          headerTitle('Career', context),
+          headerTitle('Contact', context),
+          const Padding(padding: EdgeInsets.only(right: 100)),
+        ],
+      ),
+    ],
+  );
+}
+
+Widget headerTitle(String title, BuildContext context) {
   return FilledButton(
     style: ButtonStyle(
       shadowColor:
@@ -293,7 +288,17 @@ Widget headerTitle(String title) {
     ),
     onPressed: () {
       if (title == 'About us') {
-      } else if (title == 'Our Story') {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const BackgroundPage(),
+          ),
+        );
+      } else if (title == 'Business') {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const CIPage(),
+          ),
+        );
       } else if (title == 'Career') {
       } else if (title == 'Contact') {}
     },
