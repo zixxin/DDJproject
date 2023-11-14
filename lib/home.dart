@@ -78,41 +78,70 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppBar(
-                scrolledUnderElevation: 0,
-                backgroundColor: backgroundColor,
-                automaticallyImplyLeading: false,
-                elevation: 0.0,
-                leading: Row(
+              scrolledUnderElevation: 0,
+              backgroundColor: backgroundColor,
+              automaticallyImplyLeading: false,
+              elevation: 0.0,
+              leading: Row(
+                children: [
+                  const Padding(padding: EdgeInsets.only(left: 100)),
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    width: 50,
+                    child: Image.asset('images/logo.png'),
+                  ),
+                  const Padding(padding: EdgeInsets.only(left: 8)),
+                  const Text(
+                    '두더지 프로젝트',
+                    style: TextStyle(
+                        fontFamily: 'NanumMyeongjo',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: red),
+                  ),
+                ],
+              ),
+              leadingWidth: 700,
+              actions: [
+                Row(
                   children: [
-                    const Padding(padding: EdgeInsets.only(left: 100)),
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      width: 50,
-                      child: Image.asset('images/logo.png'),
-                    ),
-                    const Padding(padding: EdgeInsets.only(left: 8)),
-                    const Text(
-                      '두더지 프로젝트',
-                      style: TextStyle(
-                          fontFamily: 'NanumMyeongjo',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 24,
-                          color: red),
-                    ),
+                    headerTitle('About us'),
+                    headerTitle('Business'),
+                    headerTitle('Career'),
+                    headerTitle('Contact'),
+                    const Padding(padding: EdgeInsets.only(right: 100)),
                   ],
                 ),
-                leadingWidth: 700,
-                actions: [
-                  Row(
-                    children: [
-                      headerTitle('About us'),
-                      headerTitle('Business'),
-                      headerTitle('Career'),
-                      headerTitle('Contact'),
-                      const Padding(padding: EdgeInsets.only(right: 100)),
-                    ],
-                  ),
-                ]),
+              ],
+              // bottom: PreferredSize(
+              //     preferredSize: const Size.fromHeight(100.0),
+              //     child: Column(children: [
+              //       Divider(
+              //           thickness: 1,
+              //           color: grey,
+              //           indent: MediaQuery.of(context).size.width * 0.1,
+              //           endIndent: MediaQuery.of(context).size.width * 0.1),
+              //       const Padding(
+              //         padding: EdgeInsets.only(top: 15),
+              //       ),
+              //       bottomTitle('Background'),
+              //       const Padding(
+              //         padding: EdgeInsets.only(top: 5),
+              //       ),
+              //       bottomTitle('Vision&Mission'),
+              //       const Padding(
+              //         padding: EdgeInsets.only(top: 5),
+              //       ),
+              //       bottomTitle('History'),
+              //       const Padding(
+              //         padding: EdgeInsets.only(top: 5),
+              //       ),
+              //       bottomTitle('CI'),
+              //       const Padding(
+              //         padding: EdgeInsets.only(bottom: 15),
+              //       ),
+              //     ])),
+            ),
           ],
         ),
       ),
@@ -133,6 +162,17 @@ class _MyHomePageState extends State<MyHomePage> {
               )),
         ],
       ),
+    );
+  }
+
+  Widget bottomTitle(String title) {
+    return Text(
+      title,
+      style: const TextStyle(
+          color: black,
+          fontFamily: 'Judson',
+          fontWeight: FontWeight.w400,
+          fontSize: 13),
     );
   }
 
