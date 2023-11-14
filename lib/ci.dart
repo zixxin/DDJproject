@@ -59,7 +59,7 @@ class _CIPageState extends State<CIPage> {
                         fontWeight: FontWeight.w400,
                         fontSize: 18),
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 50)),
+                  const Padding(padding: EdgeInsets.only(top: 100)),
                   SizedBox(
                     width: 1000,
                     child: Image.asset('images/ci.png'),
