@@ -100,7 +100,13 @@ flutter:
     - images/두더지강정1.png
     - images/두더지강정2.png
     - images/연혁.png
-  
+    - images/향화정소개.png
+    - images/올리브소개.png
+    - images/황남샌드소개.png
+    - images/황남우엉김밥소개.png
+    - images/경주약과방소개.png
+    - images/고도리소개.png
+    - images/두더지강정소개.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

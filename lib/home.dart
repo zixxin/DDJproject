@@ -5,6 +5,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'background.dart';
 import 'ci.dart';
 import 'history.dart';
+import 'brand.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -293,7 +294,13 @@ Widget headerTitle(String title, BuildContext context) {
             builder: (context) => const CIPage(),
           ),
         );
-      } else if (title == 'Contact') {}
+      } else if (title == 'Contact') {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const BrandPage(),
+          ),
+        );
+      }
     },
     child: Text(
       title,

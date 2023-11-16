@@ -61,7 +61,7 @@ class _HistoryPageState extends State<HistoryPage> {
                   ),
                   const Padding(padding: EdgeInsets.only(top: 5)),
                   const Text(
-                    '두프가 걸어온 길, 이제는 여러분과 함께 걷길 원합니다.',
+                    '우리가 걸어온 길, 이제는 여러분과 함께 걷기를 원합니다.',
                     style: TextStyle(
                         color: black,
                         fontFamily: 'Pretendard',
