@@ -85,6 +85,20 @@ flutter:
     - images/황남우엉김밥.png
     - images/황남우엉김밥내부.JPG
     - images/황남우엉김밥카운터.JPG
+    - images/향화정1.png
+    - images/향화정2.png
+    - images/올리브1.png
+    - images/올리브2.png
+    - images/황남샌드1.png
+    - images/황남샌드2.png
+    - images/황남우엉김밥1.png
+    - images/황남우엉김밥2.png
+    - images/약과방1.png
+    - images/약과방2.png
+    - images/고도리1.png
+    - images/고도리2.png
+    - images/두더지강정1.png
+    - images/두더지강정2.png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -114,6 +128,12 @@ flutter:
           weight: 700
         - asset: fonts/NanumMyeongjoExtraBold.ttf
           weight: 800
+    - family: Pretendard
+      fonts:
+        - asset: fonts/Pretendard-Regular.ttf
+          weight: 400
+        - asset: fonts/Pretendard-Bold.ttf
+          weight: 700
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
