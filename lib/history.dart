@@ -68,7 +68,7 @@ class _HistoryPageState extends State<HistoryPage> {
                         fontWeight: FontWeight.w700,
                         fontSize: 18),
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 25)),
+                  const Padding(padding: EdgeInsets.only(top: 100)),
                   showHistoryImage(),
                 ],
               )),
@@ -81,9 +81,8 @@ class _HistoryPageState extends State<HistoryPage> {
     return CarouselSlider.builder(
       options: CarouselOptions(
         initialPage: 0,
-        viewportFraction: 1,
         autoPlay: true,
-        autoPlayInterval: const Duration(seconds: 1),
+        autoPlayInterval: const Duration(seconds: 2),
         aspectRatio: 3 / 4,
         enlargeCenterPage: true,
         onPageChanged: (index, reason) => setState(() {
@@ -95,9 +94,8 @@ class _HistoryPageState extends State<HistoryPage> {
         final path = historyImageList.elementAt(index);
         return Image.asset(
           path,
-          fit: BoxFit.cover,
-          width: 510,
-          height: 680,
+          fit: BoxFit.fitWidth,
+          width: 300,
         );
       },
     );
