@@ -28,8 +28,7 @@ class _BrandPageState extends State<BrandPage> {
         shrinkWrap: true,
         children: <Widget>[
           Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 330, vertical: 80),
+              padding: const EdgeInsets.only(left: 330, right: 330, top: 80),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
