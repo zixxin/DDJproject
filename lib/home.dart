@@ -124,7 +124,6 @@ class _MyHomePageState extends State<MyHomePage> {
           autoPlay: true,
           autoPlayInterval: const Duration(seconds: 2),
           aspectRatio: 2 / 1,
-          enlargeCenterPage: true,
           onPageChanged: (index, reason) => setState(() {
             activeIndex = index;
           }),
@@ -168,23 +167,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    name,
-                    style: const TextStyle(
-                        color: grey,
-                        fontFamily: 'NanumMyeongjo',
-                        fontWeight: FontWeight.w800,
-                        fontSize: 22),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8),
-                  ),
-                  Text(
                     eng,
                     style: const TextStyle(
                         color: white,
                         fontFamily: 'Judson',
                         fontWeight: FontWeight.w400,
-                        fontSize: 26),
+                        fontSize: 28),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 5),
@@ -195,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: white,
                         fontFamily: 'NanumMyeongjo',
                         fontWeight: FontWeight.w400,
-                        fontSize: 26),
+                        fontSize: 28),
                   )
                 ],
               ),

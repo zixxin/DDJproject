@@ -68,8 +68,22 @@ class _HistoryPageState extends State<HistoryPage> {
                         fontWeight: FontWeight.w700,
                         fontSize: 18),
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 100)),
-                  showHistoryImage(),
+                  const Padding(padding: EdgeInsets.only(top: 60)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: 380,
+                        child: showHistoryImage(),
+                      ),
+                      const Padding(padding: EdgeInsets.only(left: 80)),
+                      SizedBox(
+                        width: 350,
+                        child: Image.asset('images/연혁.png'),
+                      ),
+                    ],
+                  ),
                 ],
               )),
         ],
@@ -82,9 +96,9 @@ class _HistoryPageState extends State<HistoryPage> {
       options: CarouselOptions(
         initialPage: 0,
         autoPlay: true,
+        viewportFraction: 1,
         autoPlayInterval: const Duration(seconds: 2),
         aspectRatio: 3 / 4,
-        enlargeCenterPage: true,
         onPageChanged: (index, reason) => setState(() {
           activeIndex = index;
         }),
@@ -94,8 +108,7 @@ class _HistoryPageState extends State<HistoryPage> {
         final path = historyImageList.elementAt(index);
         return Image.asset(
           path,
-          fit: BoxFit.fitWidth,
-          width: 300,
+          fit: BoxFit.cover,
         );
       },
     );
