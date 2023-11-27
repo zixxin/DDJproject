@@ -2,10 +2,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'utils/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'background.dart';
-import 'ci.dart';
-import 'history.dart';
-import 'brand.dart';
+import 'about_us/background.dart';
+import 'about_us/ci.dart';
+import 'about_us/history.dart';
+import 'business/brand.dart';
+import 'career/apply.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -291,7 +292,7 @@ Widget headerTitle(String title, BuildContext context) {
       } else if (title == 'Career') {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => const CIPage(),
+            builder: (context) => const ApplyPage(),
           ),
         );
       } else if (title == 'Contact') {

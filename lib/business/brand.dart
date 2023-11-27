@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'utils/colors.dart';
-import 'home.dart';
+import '../utils/colors.dart';
+import '../home.dart';
 
 class BrandPage extends StatefulWidget {
   const BrandPage({super.key});

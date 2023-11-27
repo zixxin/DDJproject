@@ -69,6 +69,14 @@ flutter:
     - images/ci.png
     - images/brands.png
     - images/background.png
+    - images/mission.png
+    - images/vision.png
+    - images/contact.png
+    - images/global.png
+    - images/spice.png
+    - images/benefit.png
+    - images/poster.png
+    - images/incubating.png
     - images/고도리.png
     - images/고도리내부.JPG
     - images/두더지강정.png
@@ -107,6 +115,9 @@ flutter:
     - images/경주약과방소개.png
     - images/고도리소개.png
     - images/두더지강정소개.png
+    - images/manager_pool.png
+    - images/cook_pool.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

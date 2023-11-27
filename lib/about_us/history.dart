@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'utils/colors.dart';
-import 'home.dart';
+import '../utils/colors.dart';
+import '../home.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
